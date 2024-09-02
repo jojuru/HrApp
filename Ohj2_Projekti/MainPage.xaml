@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ohj2_Projekti.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+
+            <Label
+                Text="Käyttäjätunnus"
+                FontSize="28"
+                />
+            <Entry
+                x:Name="userEnt"
+                FontSize="28"
+                WidthRequest="400"
+                HorizontalOptions="Start"
+                ></Entry>
+            <Label
+                Text="Salasana"
+                FontSize="28"/>
+            <Entry
+                x:Name="passwordEnt"
+                FontSize="28"
+                IsPassword="true"
+                WidthRequest="400"
+                HorizontalOptions="Start"></Entry>
+            <Label
+                Text="Kirjoita Salasana Uudestaan"
+                x:Name="newpasswordLbl"
+                IsVisible="false"
+                FontSize="28"/>
+            <Entry
+                x:Name="passwordnewEnt"
+                FontSize="28"
+                IsPassword="true"
+                IsVisible="false"
+                WidthRequest="400"
+                HorizontalOptions="Start"></Entry>
+            <Button
+                x:Name="LoginBtn"
+                Text="Kirjaudu sisään"
+                FontSize="20"
+                WidthRequest="200"
+                Clicked="OnLoginClicked"
+                HorizontalOptions="Start"
+                />
+            <Label
+                Text="Rekisteröidy uudella käyttäjällä"
+                FontSize="18"/>
+            <Switch 
+                x:Name="LoginSwi"
+                IsToggled="false"
+                Toggled="OnSwitchToggled"
+                />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ohj2_Projekti.Hubpage">
+
+    
+
+    <ScrollView>
+        <StackLayout
+        Spacing="25"
+        Padding="20"
+        VerticalOptions="Center" >
+            <Label Text="Henkilö:" FontSize="30" FontAttributes="Bold"></Label>
+            <Label x:Name="currentLbl" Text="Uusi henkilö" FontSize="25"></Label>
+            <StackLayout 
+                Orientation="Horizontal" 
+                Spacing="25"
+                Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Etunimi" FontSize="18" ></Label>
+                    <Entry x:Name="firstnameEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Sukunimi" FontSize="18" ></Label>
+                    <Entry x:Name="lastnameEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></Entry>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Spacing="25"
+                         Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Kutsumanimi" FontSize="18" ></Label>
+                    <Entry x:Name="nicknameEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" >
+                    <Label Text="Henkilötunnus" FontSize="18" ></Label>
+                    <Entry x:Name="ssnEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></Entry>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout 
+                Orientation="Horizontal" 
+                Spacing="25"
+                Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Katuosoite" FontSize="18" ></Label>
+                    <Entry x:Name="streetEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Postinumero" FontSize="18" ></Label>
+                    <Entry x:Name="zipcodeEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start" TextChanged="OnTextChanged"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Postitoimipaikka" FontSize="18" ></Label>
+
+                    <StackLayout Orientation="Vertical">
+                        <Entry x:Name="cityEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start" ></Entry>
+                        <ListView x:Name="suggestionListView" IsVisible="false">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding city}" Tapped="OnSuggestionSelected"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" 
+                         Spacing="25"
+                         Padding="20">
+                <Button x:Name="addBtn" Text="Lisää"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" Clicked="SaveClicked"></Button>
+                <Button x:Name="newempBtn" Text="Uusi"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" Clicked="NewempClicked"></Button>
+                <Button x:Name="removeBtn" Text="Poista"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" IsEnabled="False" Clicked="removeClicked"></Button>
+                <Button x:Name="updateBtn" Text="Päivitä"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" IsEnabled="False" Clicked="updateClicked"></Button>
+                
+            </StackLayout>
+
+            <Frame BorderColor="DarkSlateGrey" CornerRadius="10" Padding="10" Background="#E6E6FA">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="TmbtEtunimiorder" Text="▲" Clicked="SortButtonEtunimi" Background="Transparent" BorderColor="Transparent" TextColor="Black" WidthRequest="40" HeightRequest="30" />
+                        <Label Text="Etunimi" WidthRequest="160" FontAttributes="Bold" FontSize="18" />
+                        <Button x:Name="TmbtSukunimiorder" Text="▲" Clicked="SortButtonSukunimi" Background="Transparent" BorderColor="Transparent" TextColor="Black" WidthRequest="40" HeightRequest="30" />
+                        <Label Text="Sukunimi" WidthRequest="160" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Kutsumanimi" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Henkilötunnus" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Katuosoite" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Postinumero" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Postitoimipaikka" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                    </StackLayout>
+                    <ListView x:Name="listaLw" HeightRequest="210" ItemSelected="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding firstname}" />
+                                        <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding lastname}" />
+                                        <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding nickname}" />
+                                        <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding ssn}" />
+                                        <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding street}" />
+                                        <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding zipcode}" />
+                                        <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding city}" />
+                                    </StackLayout>
+                                    
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Toimisuhde:" FontSize="30" FontAttributes="Bold"></Label>
+            <Label x:Name="curren2tLbl" Text="Uusi Toimisuhde" FontSize="25"></Label>
+            <StackLayout 
+                Orientation="Horizontal" 
+                Spacing="25"
+                Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Nimike" FontSize="18" ></Label>
+                    <Entry x:Name="nimikeEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Yksikkö" FontSize="18" ></Label>
+                    <Entry x:Name="yksikkoEnt" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></Entry>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout 
+                Orientation="Horizontal" 
+                Spacing="25"
+                Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Alkamispäivä" FontSize="18" ></Label>
+                    <DatePicker x:Name="alkamisDp" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></DatePicker>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Loppumispäivä" FontSize="18" ></Label>
+                    <DatePicker x:Name="loppumisDp" FontSize="14" WidthRequest="300" HeightRequest="50" HorizontalOptions="Start"></DatePicker>
+                    <Label Text="Toistaiseksi voimassa oleva" FontSize="14"/>
+                    <Switch x:Name="loppumisSwi" IsToggled="false" Toggled="OnSwitchToggled"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" 
+             Spacing="25"
+             Padding="20">
+                <Button x:Name="TmaddBtn" Text="Lisää"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" Clicked="TmSaveClicked"></Button>
+                <Button x:Name="TmnewempBtn" Text="Uusi"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" Clicked="TmNewempClicked"></Button>
+                <Button x:Name="TmremoveBtn" Text="Poista"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" IsEnabled="False" Clicked="TmremoveClicked"></Button>
+                <Button x:Name="TmupdateBtn" Text="Päivitä"  WidthRequest="160" FontSize="18" HorizontalOptions="Start" IsEnabled="False" Clicked="TmupdateClicked"></Button>
+            </StackLayout>
+
+            <Frame BorderColor="DarkSlateGrey" CornerRadius="10" Padding="10" Background="#E6E6FA">
+                <StackLayout>
+                    <StackLayout
+                            Orientation="Horizontal"
+                            >
+                        <Button x:Name="Tmbtnnimikeorder" Text="▲" IsEnabled="False"  Clicked="SortButtonNimike" Background="Transparent" BorderColor="Transparent" TextColor="Black" WidthRequest="40" HeightRequest="30" />
+                        <Label Text="Nimike" WidthRequest="160" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Yksikkö" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Alkamispäivä" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                        <Label Text="Loppumispäivä" WidthRequest="200" FontAttributes="Bold" FontSize="18" />
+                    </StackLayout>
+                    <ListView x:Name="listaTm" HeightRequest="210" ItemSelected="TmOnItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding name}" />
+                                    <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding unit}" />
+                                    <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding begin}" />
+                                    <Label WidthRequest="200" Padding="5" FontSize="18" Text="{Binding end}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+            
+        </StackLayout>
+
+    </ScrollView>
+    
+
+</ContentPage>
