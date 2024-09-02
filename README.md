@@ -38,3 +38,11 @@ Sovellus sisältää myös lokitiedot, jotka tallennetaan tiedostoon C:\Temp\HrF
 ![image](https://github.com/user-attachments/assets/f01c9b63-41eb-43a5-826f-4c7cc5332b5c)
 Kuva 1. 
 
+![image](https://github.com/user-attachments/assets/5acbd797-728f-4cc8-9563-162aa1f7d520)
+Kuva 2.
+
+![image](https://github.com/user-attachments/assets/a4725a5c-5ed4-4576-9cd2-c2e9193a98e8)
+Kuva 3.
+
+![image](https://github.com/user-attachments/assets/fdd67204-2f48-4b26-b85d-812a4c45fae2)
+Kuva 4.
