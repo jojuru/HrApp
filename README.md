@@ -61,3 +61,19 @@ Kuva 8.
 
 ![image](https://github.com/user-attachments/assets/2ba3dfbe-32c4-47c7-9dba-ae817ce8fd3b)
 kuva 9.
+
+Liittyvät tiedostot
+Sovellus käyttää C://temp/Hrfiles-kansiota liittyville tiedostoilleen. Tämä kansio sisältää loki-, henkilö- ja toimisuhdetiedot sekä käyttäjätiedot. Kansio ja siihen kuuluvat tiedostot luodaan automaattisesti, kunhan temp-kansio on olemassa C-asemalla.
+
+Tiedostot
+- users.json
+  Tämä tiedosto sisältää kirjautumistiedot sovelluksen käyttäjille. Huomioi, että käyttäjätiedot eivät liity sovelluksen käsittelemiin henkilötietoihin, vaan ne ovat ainoastaan kirjautumista varten. Tämä tiedosto ei ole     salattu.
+
+- log.json
+  Tämä tiedosto sisältää sovelluksen lokitiedot JSON-muodossa. Lokitiedoista voi nähdä, mitä käyttäjät ovat tehneet ja milloin. Tämä tiedosto ei ole salattu.
+
+- employ.txt
+Tämä tiedosto sisältää henkilötiedot ja toimisuhdetiedot. Tiedoston sisältö on JSON-merkkijono, joka on salattu kovakoodatulla avaimella. Jos tiedoston avaa ilman purkamista, sen sisältö näyttää satunnaiselta         numerosarjalta ja kirjaimilta (Kuva 10).
+
+![image](https://github.com/user-attachments/assets/cf1e3f3b-edd4-44ae-bed3-c502050f216d)
+Kuva 10.
