@@ -1,1 +1,0 @@
-D:\koodaus\ohj2net\task-templates\gitsend\Ohj2_Projekti\Ohj2_Projekti.csproj;x64
