@@ -13,3 +13,25 @@ Sovelluksessa on useita lisäominaisuuksia:
 - Sovellus osaa ehdottaa kaupunkeja syötetyn postinumeron perusteella.
 - Sovellus tarkistaa, että syötetty henkilötunnus on oikeassa muodossa.
 - Sovellus on toteutettu Visual Studiolla käyttäen .NET MAUI -teknologiaa. Ohjelmointikielinä on käytetty C# ja XAML.
+
+# Käyttöohje
+Tämä sovellus käyttää C://temp/Hrfiles-kansiota tiedostojensa tallentamiseen. Ohjelma luo Hrfiles-kansion ja kaikki tarvittavat tekstitiedostot automaattisesti, mutta C://temp/-kansion olemassaolo on edellytys ohjelman toiminnalle. Jos C://temp/-kansio on olemassa ja sinne pääsy on esteetön, tarvittavat tiedostot ja kansiot luodaan automaattisesti.
+
+Kirjautumissivu
+Kun sovellus avataan, ensimmäisenä näkyy kirjautumissivu (Kuva 1). Kirjautumissivulle syötetään käyttäjätunnus ja salasana. Jos haluat luoda uuden käyttäjän, paina "Rekisteröidy uudella käyttäjällä" -painiketta. Tämän jälkeen avautuu näkymä, jossa voit luoda uuden käyttäjän (Kuva 2). Onnistuneen käyttäjän luonnin jälkeen ohjelma ilmoittaa onnistumisesta (Kuva 3). Jos käyttäjätunnus on jo olemassa, saat ilmoituksen siitä.
+
+Ohjelmassa on oletuksena admin-käyttäjä, joten erillistä käyttäjän luonnin tarvetta ei välttämättä ole.
+
+- Käyttäjätunnus: admin
+- Salasana: admin
+Pääsivu
+Onnistuneen kirjautumisen jälkeen avautuu pääsivu (Kuva 4). Sivun yläkulmassa näkyy aktiivinen käyttäjä tai valittu henkilö. Tämän valinnan perusteella määritetään, mitä toimintoja käyttäjä voi suorittaa. Esimerkiksi, kun uusi käyttäjä on valittuna, voit lisätä uusia henkilöitä. Jos valitset listalta tietyn henkilön, voit muokata tai tarkastella tämän tietoja (Kuva 5). Vanhoja tietoja voi muokata tai poistaa. Poistamisen yhteydessä ohjelma varmistaa päätöksesi (Kuva 6). Henkilön valinnan voi peruuttaa painamalla "Uusi"-painiketta tai valitsemalla toisen henkilön listalta.
+
+Sovellus tarjoaa myös ehdotuksia postitoimipaikoille syötetyn postinumeron perusteella (Kuva 7). Henkilötunnuksen on oltava oikeassa muodossa, muuten ohjelma ei salli tietojen lisäämistä tai muokkaamista (Kuva 8).
+
+Toimisuhde-osio
+Toimisuhde-osio tulee käyttöön, kun tietty henkilö on valittuna. Toiminta on lähes identtinen henkilötieto-osion kanssa: napit ja toimisuhteen valintaperiaatteet ovat samankaltaisia (Kuva 9). Toimisuhde voi olla toistaiseksi voimassa oleva, ja tätä määrittää nappi "Loppumispäivä"-kentän alla.
+
+Lokitiedot
+Sovellus sisältää myös lokitiedot, jotka tallennetaan tiedostoon C:\Temp\HrFiles\log.json. Lokitiedot ovat JSON-muodossa ja sisältävät tiedot siitä, kuka teki, mitä teki ja milloin teki.
+
