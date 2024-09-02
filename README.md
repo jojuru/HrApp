@@ -1,8 +1,15 @@
 # HrApp
-The purpose of the program is to be an application that can manage a company's personnel information. In addition to personal information, the program also includes details about employees' employment relationships. The program consists of two pages: a login page and the main page.
 
-The login page is specifically for logging in, and it also includes a feature to add a new user by pressing a button located below the password field. The main page has sections for personnel and their related employment relationships. In the application, you can add, modify, view, and delete information about personnel and their employment relationships.
+Ohjelman tarkoituksena on toimia sovelluksena, jolla voidaan hallita yrityksen henkilötietoja sekä seurata henkilöstön työsuhteita. Sovellus koostuu kahdesta pääsivusta: kirjautumissivusta ja pääsivusta.
 
-The application has many other features as well. For example, personal information and their employment details are encrypted when they are stored in a text file. The program logs all events, suggests cities based on the entered postal code, and even checks that the social security number is valid.
+Kirjautumissivu on suunniteltu käyttäjän tunnistautumiseen. Lisäksi kirjautumissivulla on mahdollisuus lisätä uusi käyttäjä painamalla salasanakentän alapuolella olevaa painiketta.
 
-The application has been developed using Visual Studio with .NET MAUI. The programming languages used are C# and XAML.
+Pääsivu sisältää osiot henkilöiden ja heidän työsuhteidensa hallintaan. Sovelluksen kautta käyttäjä voi lisätä, muokata, tarkastella ja poistaa henkilötietoja sekä työsuhteisiin liittyviä tietoja.
+
+Sovelluksessa on useita lisäominaisuuksia:
+
+- Henkilöiden ja heidän työsuhteidensa tiedot salataan ennen tallennusta tekstitiedostoihin.
+- Kaikki tapahtumat tallennetaan lokitiedostoon.
+- Sovellus osaa ehdottaa kaupunkeja syötetyn postinumeron perusteella.
+- Sovellus tarkistaa, että syötetty henkilötunnus on oikeassa muodossa.
+- Sovellus on toteutettu Visual Studiolla käyttäen .NET MAUI -teknologiaa. Ohjelmointikielinä on käytetty C# ja XAML.
