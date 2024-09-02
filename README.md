@@ -46,3 +46,18 @@ Kuva 3.
 
 ![image](https://github.com/user-attachments/assets/fdd67204-2f48-4b26-b85d-812a4c45fae2)
 Kuva 4.
+
+![image](https://github.com/user-attachments/assets/030c4b8f-c78e-461c-8639-872c3e02f788)
+Kuva 5.
+
+![image](https://github.com/user-attachments/assets/d557c393-4c17-4712-91ea-563f0942aabb)
+Kuva 6.
+
+![image](https://github.com/user-attachments/assets/413be9c4-daef-4e1a-93ad-07b993175064)
+Kuva 7. 
+
+![image](https://github.com/user-attachments/assets/bf044364-b6c0-48e4-8ed7-4e0a7e43d722)
+Kuva 8.
+
+![image](https://github.com/user-attachments/assets/2ba3dfbe-32c4-47c7-9dba-ae817ce8fd3b)
+kuva 9.
