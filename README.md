@@ -35,3 +35,6 @@ Toimisuhde-osio tulee käyttöön, kun tietty henkilö on valittuna. Toiminta on
 Lokitiedot
 Sovellus sisältää myös lokitiedot, jotka tallennetaan tiedostoon C:\Temp\HrFiles\log.json. Lokitiedot ovat JSON-muodossa ja sisältävät tiedot siitä, kuka teki, mitä teki ja milloin teki.
 
+![image](https://github.com/user-attachments/assets/f01c9b63-41eb-43a5-826f-4c7cc5332b5c)
+Kuva 1. 
+
